@@ -18,12 +18,13 @@ df = pd.DataFrame(columns= world_titles)
 
 column_data = table.find_all('tr')
 
-for row in column_data:
+for row in column_data[1:]:
   row_data = row.find_all('td')
   individual_row_data = [data.text.strip() for data in row_data]
-  print(individual_row_data)
+  # print(individual_row_data)
+
+  length = len(df)
+  df.loc[length] = individual_row_data
   
 
-# print(df)
-# print(column_data)
-# print(individual_row_data)
+  df.to_csv(r'./output.csv', index=False)
