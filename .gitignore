@@ -1,0 +1,5 @@
+# Ignore alexa_env folder
+alexa_env/
+
+# Virtual environment
+venv/
